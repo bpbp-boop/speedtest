@@ -78,18 +78,18 @@ If you chose to use SQLite, you might want to change `$Sqlite_db_file` to anothe
 
 If you chose to use MySQL, you must set your database credentials:
 ```php
-$MySql_username="USERNAME"; //your database username
-$MySql_password="PASSWORD"; //your database password
-$MySql_hostname="DB_HOSTNAME"; //database address, usually localhost
-$MySql_databasename="DB_NAME"; //the name of the database where you loaded telemetry_mysql.sql
+$MySql_username='USERNAME'; //your database username
+$MySql_password='PASSWORD'; //your database password
+$MySql_hostname='DB_HOSTNAME'; //database address, usually localhost
+$MySql_databasename='DB_NAME'; //the name of the database where you loaded telemetry_mysql.sql
 ```
 
 If you chose to use PostgreSQL, you must set your database credentials:
 ```php
-$PostgreSql_username="USERNAME"; //your database username
-$PostgreSql_password="PASSWORD"; //your database password
-$PostgreSql_hostname="DB_HOSTNAME"; //database address, usually localhost
-$PostgreSql_databasename="DB_NAME"; //the name of the database where you loaded telemetry_postgresql.sql
+$PostgreSql_username='USERNAME'; //your database username
+$PostgreSql_password='PASSWORD'; //your database password
+$PostgreSql_hostname='DB_HOSTNAME'; //database address, usually localhost
+$PostgreSql_databasename='DB_NAME'; //the name of the database where you loaded telemetry_postgresql.sql
 ```
 
 ##### Results sharing
