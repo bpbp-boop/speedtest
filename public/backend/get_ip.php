@@ -4,6 +4,8 @@
 	Output from this script is a JSON string composed of 2 objects: a string called processedString which contains the combined IP, ISP, Contry and distance as it can be presented to the user; and an object called rawIspInfo which contains the raw data from ipinfo.io (will be empty if isp detection is disabled).
 	Client side, the output of this script can be treated as JSON or as regular text. If the output is regular text, it will be shown to the user as is.
 */
+
+
 error_reporting(0);
 $ip = '';
 header('Content-Type: application/json; charset=utf-8');
@@ -79,15 +81,11 @@ function distance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo)
  */
 function getIpInfoTokenString()
 {
-    $apikeyFile = 'getIP_ipInfo_apikey.php';
-    if (!file_exists($apikeyFile)) {
+    require '../../config/settings.php';
+    if (!defined('IPINFO_API_KEY')) {
         return '';
     }
-    require $apikeyFile;
-    if (empty($IPINFO_APIKEY)) {
-        return '';
-    }
-    return '?token=' . $IPINFO_APIKEY;
+    return '?token=' . IPINFO_API_KEY;
 }
 
 if (isset($_GET['isp'])) {

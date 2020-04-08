@@ -1,2 +1,2 @@
-results/idObfuscation_salt.php
-backend/getIP_serverLocation.php
+public/results/idObfuscation_salt.php
+public/backend/getIP_serverLocation.php

@@ -1,19 +1,18 @@
 <?php
 function getObfuscationSalt()
 {
-    $saltFile = __DIR__ . '/idObfuscation_salt.php';
-    if (file_exists($saltFile)) {
-        require $saltFile;
+    $salt_file = __DIR__ . '/../config/obfuscation_salt.php';
+    if (file_exists($salt_file)) {
+        require $salt_file;
     } else {
         $bytes = openssl_random_pseudo_bytes(4);
-        $sf = fopen($saltFile, 'wb');
+        $sf = fopen($salt_file, 'wb');
         fwrite($sf, chr(60) . "?php\n");
-        fwrite($sf, '$OBFUSCATION_SALT=0x' . bin2hex($bytes) . ";\n");
-        fwrite($sf, '?' . chr(62));
+        fwrite($sf, 'const OBFUSCATION_SALT = 0x' . bin2hex($bytes) . ";\n");
         fclose($sf);
-        require $saltFile;
+        require $salt_file;
     }
-    return isset($OBFUSCATION_SALT) ? $OBFUSCATION_SALT : 0;
+    return OBFUSCATE_SALT;
 }
 
 /*
@@ -22,7 +21,7 @@ It is not cryptographically secure, don't use it to hash passwords or something!
 */
 function obfdeobf($id, $dec)
 {
-    $salt = getObfuscationSalt() & 0xFFFFFFFF;
+    $salt = OBFUSCATE_SALT & 0xFFFFFFFF;
     $id &= 0xFFFFFFFF;
     if ($dec) {
         $id ^= $salt;

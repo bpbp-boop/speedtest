@@ -161,7 +161,7 @@ var SPEEDTEST_SERVERS=[
 		"dlURL":"garbage.php",  //path to download test on this server (garbage.php or replacement)
 		"ulURL":"empty.php",  //path to upload test on this server (empty.php or replacement)
 		"pingURL":"empty.php",  //path to ping/jitter test on this server (empty.php or replacement)
-		"getIpURL":"getIP.php"  //path to getIP on this server (getIP.php or replacement)
+		"getIpURL":"get_ip.php"  //path to getIP on this server (get_ip.php or replacement)
 	},
 	{
 		"name":"Speedtest Demo Server 2",
@@ -169,7 +169,7 @@ var SPEEDTEST_SERVERS=[
 		"dlURL":"garbage.php",
 		"ulURL":"empty.php",
 		"pingURL":"empty.php",
-		"getIpURL":"getIP.php"
+		"getIpURL":"get_ip.php"
 	}
 	//add other servers here, comma separated
 ];
@@ -449,7 +449,7 @@ Example:
 	dlURL:"garbage.php",
 	ulURL:"empty.php",
 	pingURL:"empty.php",
-	getIpURL:"getIP.php"
+	getIpURL:"get_ip.php"
 }
 ```
 
@@ -700,7 +700,7 @@ var s=new Speedtest();
 s.setParameter("url_dl","URL to your garbage.php replacement");
 s.setParameter("url_ul","URL to your empty.php replacement");
 s.setParameter("url_ping","URL to your empty.php replacement");
-s.setParameter("url_getIp","URL to your getIP.php replacement");
+s.setParameter("url_getIp","URL to your get_ip.php replacement");
 ```
 
 #### Replacement for `garbage.php`
